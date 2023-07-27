@@ -13,7 +13,7 @@ myForm.addEventListener("submit", function(event){
         id: "",
         firstName: event.target.elements.firstName.value,
         secondName: event.target.elements.secondName.value,
-        crime: event.target.elements.age.value
+        age: event.target.elements.age.value
     })
 
     event.target.elements.firstName.value = ""
@@ -60,5 +60,13 @@ nameFilter.addEventListener("input", function(event){
     let ourResults = myStorageJSON.filter(function(onePerson){
         return onePerson.firstName.toLowerCase().includes(whatWeSearch.toLowerCase())
     })
-    console.log(ourResults)
+
+    // vypisování výsledku vyhledávání do stránky
+    ourResults.forEach(function(oneResult){
+        let paragraph = document.createElement("p")
+
+        paragraph.innerHTML = `Jméno: ${oneResult.firstName}<br> Příjmení: ${oneResult.secondName}<br>Věk: ${oneResult.age}`
+
+        document.querySelector(".filter-name").appendChild(paragraph)
+    })    
 })
