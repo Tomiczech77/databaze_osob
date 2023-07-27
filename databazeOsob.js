@@ -60,12 +60,14 @@ nameFilter.addEventListener("input", function(event){
     let ourResults = myStorageJSON.filter(function(onePerson){
         return onePerson.firstName.toLowerCase().includes(whatWeSearch.toLowerCase())
     })
+    
+    document.querySelector(".filter-name").innerHTML = ""
 
     // vypisování výsledku vyhledávání do stránky
-    ourResults.forEach(function(oneResult){
+    ourResults.forEach(function(onePerson){
         let paragraph = document.createElement("p")
 
-        paragraph.innerHTML = `Jméno: ${oneResult.firstName}<br> Příjmení: ${oneResult.secondName}<br>Věk: ${oneResult.age}`
+        paragraph.innerHTML = `Jméno: ${onePerson.firstName}<br> Příjmení: ${onePerson.secondName}<br>Věk: ${onePerson.age}`
 
         document.querySelector(".filter-name").appendChild(paragraph)
     })    
