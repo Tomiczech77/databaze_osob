@@ -60,8 +60,9 @@ nameFilter.addEventListener("input", function(event){
     let ourResults = myStorageJSON.filter(function(onePerson){
         return onePerson.firstName.toLowerCase().includes(whatWeSearch.toLowerCase())
     })
-    
+
     document.querySelector(".filter-name").innerHTML = ""
+    document.querySelector(".list-persons").innerHTML = ""
 
     // vypisování výsledku vyhledávání do stránky
     ourResults.forEach(function(onePerson){
