@@ -50,3 +50,15 @@ toList.addEventListener("click", function(event){
     }
 })
 
+// filtrování
+let nameFilter = document.querySelector(".name-filter")
+let myStorageJSON = JSON.parse(localStorage.getItem("persons"))
+
+nameFilter.addEventListener("input", function(event){
+    let whatWeSearch = event.target.value
+
+    let ourResults = myStorageJSON.filter(function(onePerson){
+        return onePerson.firstName.toLowerCase().includes(whatWeSearch.toLowerCase())
+    })
+    console.log(ourResults)
+})
