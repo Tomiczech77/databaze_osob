@@ -70,6 +70,8 @@ nameFilter.addEventListener("input", function(event){
 
         paragraph.innerHTML = `Jméno: ${onePerson.firstName}<br> Příjmení: ${onePerson.secondName}<br>Věk: ${onePerson.age}`
 
+        paragraph.classList.add("basic-style")
+
         document.querySelector(".filter-name").appendChild(paragraph)
     })    
 })
